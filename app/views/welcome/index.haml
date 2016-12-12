@@ -1,0 +1,9 @@
+%div.clase#id{:name=>"name"}
+	%h1
+		Bienvenido #{ current_user.email }
+
+	%div{:class=>"clase"}
+		%p= link_to "Ir a Productos", products_path
+		%p
+			=link_to "Cerrar Sesión", destroy_user_session_path, method: :delete
+

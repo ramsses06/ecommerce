@@ -1,0 +1,22 @@
+.col-lg-7.col-md-8.col-xs-12.col-sm-12.no-float.center-block
+	%article.card.big-padding
+		%header
+			%h1.texto-gris.text-capitalize.bold= @product.name
+		%section
+			.col-xs-6.col-md-5.no-padding.inline-block
+				=image_tag @product.productimg.url(:medium)
+			.col-md-1.inline-block.hidden-xs
+			.col-xs-5.col-md-5.inline-block.text-left
+				%h3.texto-cafe.bold.texto-normal= @product.user.email
+				%h3.texto-azul.bold.texto-normal
+					Precio: 
+					%span.texto-gris= "$ #{@product.pricing}"
+				%h3.texto-azul.bold.texto-normal
+					Archivos: 
+					%span.texto-gris 20
+				%h3.texto-azul.bold.texto-normal
+					Tamaño: 
+					%span.texto-gris 1GB
+		%section
+			%h3.texto-cafe.bold.texto-normal Descripción
+			%p.normal= @product.description

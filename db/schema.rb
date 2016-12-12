@@ -11,7 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161128224839) do
+ActiveRecord::Schema.define(version: 20161210223024) do
+
+  create_table "myemails", force: :cascade do |t|
+    t.string   "email"
+    t.string   "ip"
+    t.integer  "state",      default: 0
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string   "name"
+    t.decimal  "pricing",                 precision: 10, scale: 2
+    t.text     "description"
+    t.integer  "user_id"
+    t.string   "productimg_file_name"
+    t.string   "productimg_content_type"
+    t.integer  "productimg_file_size"
+    t.datetime "productimg_updated_at"
+    t.datetime "created_at",                                       null: false
+    t.datetime "updated_at",                                       null: false
+  end
+
+  add_index "products", ["user_id"], name: "index_products_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

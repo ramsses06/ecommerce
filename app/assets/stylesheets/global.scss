@@ -1,0 +1,109 @@
+$azul : #55C3DC ;
+$claro : #E7F3EF ;
+$rojo : #E24B2C ;
+$cafe : #8C6429 ;
+$gris : #73726D ;
+
+
+body{
+	background-color: $claro;
+}
+.notice, .alerta{
+	margin: 0;
+	padding: 0;
+	background-color: $rojo;
+	color: $claro;
+	font-weight: bold;
+	text-align: center;
+}
+
+
+// COLORES
+.texto-azul{
+	color: $azul;
+}
+.fondo-azul{
+	background-color: $azul;
+}
+
+.texto-claro{
+	color: $claro;
+}
+.fondo-claro{
+	background-color: $claro;
+}
+
+.texto-rojo{
+	color: $rojo;
+}
+.fondo-rojo{
+	background-color: $rojo;
+}
+
+.texto-cafe{
+	color: $cafe;
+}
+.fondo-cafe{
+	background-color: $cafe;
+}
+
+.texto-gris{
+	color: $gris;
+}
+.fondo-gris{
+	background-color: $gris;
+}
+
+
+// TEXTOS
+.texto-normal{
+	font-size: 1em;
+}
+.texto-big{
+	font-size: 2em;
+}
+.bold{
+	font-weight: bold;
+}
+.normal{
+	font-weight: normal;
+}
+
+// MARGENES, PADDINGS, BORDES
+.no-padding{
+	padding: 0;
+}
+.small-padding{
+	padding: 1em;
+}
+.medium-padding{
+	padding: 2em;
+}
+.large-padding{
+	padding: 3em;
+}
+.big-padding{
+	padding: 4em;
+}
+
+// BLOQUES
+
+.inline-block{
+	float: none !important;
+	display: inline-block;
+	vertical-align: middle;
+	margin: -4px;
+}
+.no-float{
+	float: none;
+}
+
+// INPUTS
+.form-control-wrapper textarea{
+	resize: vertical;
+}
+
+//IMAGENES
+img{
+	max-width: 100%;
+}
