@@ -1,7 +1,7 @@
 class BootstrapFormBuilder < ActionView::Helpers::FormBuilder
 	delegate :content_tag , to: :@template
 	
-	[:text_field, :text_area, :url_field, :email_field].each do |metodo|
+	[:text_field, :text_area, :url_field, :email_field, :password_field].each do |metodo|
 		define_method metodo do |name, *args|
 			options = args.extract_options!
 			aditional_classes = "form-control floating-label"
@@ -10,7 +10,11 @@ class BootstrapFormBuilder < ActionView::Helpers::FormBuilder
 			else
 				options[:class] = aditional_classes
 			end
-			options[:placeholder] = name.capitalize
+			if options.has_key?(:placeholder)
+				options[:placeholder] = options[:placeholder]
+			else
+				options[:placeholder] = name.capitalize
+			end
 			content_tag :div, class:"form-group" do
 				super(name, options)
 			end
@@ -37,4 +41,11 @@ class BootstrapFormBuilder < ActionView::Helpers::FormBuilder
 			super(*args, class: "btn btn-success")
 		end
 	end
+
+	def file_field(*args)
+		content_tag :div, class:"form-group" do
+			super(*args, class:"form-control")
+		end		
+	end
+
 end

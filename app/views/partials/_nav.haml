@@ -1,0 +1,42 @@
+.navbar.navbar-warning
+  .container-fluid
+    .navbar-header
+      %button.navbar-toggle{"data-target" => ".navbar-warning-collapse", "data-toggle" => "collapse", :type => "button"}
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      = link_to root_path, class: "navbar-brand" do
+        LOGO
+    .navbar-collapse.collapse.navbar-warning-collapse
+      %ul.nav.navbar-nav
+        -if user_signed_in?
+          %li
+            = link_to destroy_user_session_path, method: :delete do
+              Cerrar sesión
+        %li.dropdown
+          %a.dropdown-toggle{"data-target" => "#", "data-toggle" => "dropdown", :href => "index.html"}
+            Ejemplo de Dropdown
+            %b.caret
+          %ul.dropdown-menu
+            %li
+              %a{:href => "javascript:void(0)"} Action
+            %li
+              %a{:href => "javascript:void(0)"} Another action
+            %li
+              %a{:href => "javascript:void(0)"} Something else here
+            %li.divider
+            %li.dropdown-header Dropdown header
+            %li
+              %a{:href => "javascript:void(0)"} Separated link
+            %li
+              %a{:href => "javascript:void(0)"} One more separated link
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          = link_to carrito_path do
+            [icono]
+            Carrito (
+            = @shopping_cart.products.count
+            )
+      %form.navbar-form.navbar-right
+        .form-group
+          %input.form-control.col-sm-8{:placeholder => "Buscar", :type => "text"}/

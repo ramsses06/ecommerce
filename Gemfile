@@ -25,6 +25,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 
 #---------------------------------------------------------------#
+#Campos de tablas en Modelos COMENTADAS
+gem 'annotate'
 # devise para usuarios
 gem 'devise'
 # gema para subida de imagenes
@@ -35,12 +37,16 @@ gem 'haml-rails'
 gem 'bootstrap-sass'
 # material design para bootstrap
 gem 'bootstrap-material-design'
+# gema para sdk de paypal
+gem 'paypal-sdk-rest'
+
 
 # ENTORNO DE PRUEBAS
 gem 'shoulda-matchers'
 gem 'rspec-rails'
 gem 'factory_girl_rails', "~> 4.0"
 #----------------------------------------------------------------#
+
 
 
 # Use ActiveModel has_secure_password

@@ -1,27 +1,18 @@
-%h1 Listing products
+%div
+	%article.medium-padding
+		- @products.each do |product|
+			.col-md-3.col-sm-6.col-xs-12.inline-block
+				.card.super-small-padding.lista-productos
+					= link_to product do
+						%div
+							= image_tag product.productimg.url(:medium), class: "full-img"
+						%div
+							%h4.text-center.texto-cafe.texto-big.bold
+								= product.name
+						%div
+							%h4.texto-azul.texto-medium.small-padding
+								= product.description
 
-%table
-  %thead
-    %tr
-      %th Name
-      %th Pricing
-      %th Description
-      %th User
-      %th
-      %th
-      %th
 
-  %tbody
-    - @products.each do |product|
-      %tr
-        %td= product.name
-        %td= product.pricing
-        %td= product.description
-        %td= product.user
-        %td= link_to 'Show', product
-        %td= link_to 'Edit', edit_product_path(product)
-        %td= link_to 'Destroy', product, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
 
 = link_to 'New Product', new_product_path

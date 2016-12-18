@@ -3,10 +3,10 @@
 		%header
 			%h1.texto-gris.text-capitalize.bold= @product.name
 		%section
-			.col-xs-6.col-md-5.no-padding.inline-block
+			.col-xs-12.col-md-5.col-sm-5.no-padding.inline-block
 				=image_tag @product.productimg.url(:medium)
 			.col-md-1.inline-block.hidden-xs
-			.col-xs-5.col-md-5.inline-block.text-left
+			.col-xs-12.col-md-5.col-sm-5.inline-block.text-left
 				%h3.texto-cafe.bold.texto-normal= @product.user.email
 				%h3.texto-azul.bold.texto-normal
 					Precio: 

@@ -8,7 +8,9 @@
 </head>
 <body>
 
-<div style="<%= 'display:none;' if notice.nil? && alert.nil? %>">
+<%= render "partials/nav" %>
+
+<div style="<%= 'display:none;' if notice.nil? && alert.nil? %>" class="alert-box" >
 	<p class="notice"><%= notice %></p>
 	<p class="alerta"><%= alert %></p>
 </div>

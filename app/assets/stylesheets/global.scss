@@ -3,107 +3,150 @@ $claro : #E7F3EF ;
 $rojo : #E24B2C ;
 $cafe : #8C6429 ;
 $gris : #73726D ;
+$gris2 : #DEDBCC ;
 
 
 body{
-	background-color: $claro;
+  background-color: $claro;
 }
 .notice, .alerta{
-	margin: 0;
-	padding: 0;
-	background-color: $rojo;
-	color: $claro;
-	font-weight: bold;
-	text-align: center;
+  margin: 0;
+  padding: 0;
+  background-color: $rojo;
+  color: $claro;
+  font-weight: bold;
+  text-align: center;
+}
+
+.alert-box{
+  margin: 0;
 }
 
 
 // COLORES
 .texto-azul{
-	color: $azul;
+  color: $azul;
 }
 .fondo-azul{
-	background-color: $azul;
+  background-color: $azul;
 }
 
 .texto-claro{
-	color: $claro;
+  color: $claro;
 }
 .fondo-claro{
-	background-color: $claro;
+  background-color: $claro;
 }
 
 .texto-rojo{
-	color: $rojo;
+  color: $rojo;
 }
 .fondo-rojo{
-	background-color: $rojo;
+  background-color: $rojo;
 }
 
 .texto-cafe{
-	color: $cafe;
+  color: $cafe;
 }
 .fondo-cafe{
-	background-color: $cafe;
+  background-color: $cafe;
 }
 
 .texto-gris{
-	color: $gris;
+  color: $gris;
 }
 .fondo-gris{
-	background-color: $gris;
+  background-color: $gris;
 }
 
 
 // TEXTOS
 .texto-normal{
-	font-size: 1em;
+  font-size: 1em;
+}
+.texto-medium{
+  font-size: 1.5em;
 }
 .texto-big{
-	font-size: 2em;
+  font-size: 2em;
 }
 .bold{
-	font-weight: bold;
+  font-weight: bold;
 }
 .normal{
-	font-weight: normal;
+  font-weight: normal;
 }
 
 // MARGENES, PADDINGS, BORDES
 .no-padding{
-	padding: 0;
+  padding: 0;
+}
+.super-small-padding{
+  padding: 0.3em;
 }
 .small-padding{
-	padding: 1em;
+  padding: 1em;
 }
 .medium-padding{
-	padding: 2em;
+  padding: 2em;
 }
 .large-padding{
-	padding: 3em;
+  padding: 3em;
 }
 .big-padding{
-	padding: 4em;
+  padding: 4em;
+}
+.no-margin{
+  margin: 0;
+}
+.vertical-middle{
+  vertical-align: middle !important;
+}
+.vertical-top{
+  vertical-align: top !important;
+}
+.vertical-bottom{
+  vertical-align: bottom !important;
+}
+.top-space{
+  margin-top: 1em !important;
 }
 
 // BLOQUES
 
 .inline-block{
-	float: none !important;
-	display: inline-block;
-	vertical-align: middle;
-	margin: -4px;
+  float: none !important;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: -4px;
+  margin-left: -4px;
 }
 .no-float{
-	float: none;
+  float: none;
 }
 
 // INPUTS
 .form-control-wrapper textarea{
-	resize: vertical;
+  resize: vertical;
 }
 
 //IMAGENES
 img{
-	max-width: 100%;
+  max-width: 100%;
+}
+.full-img{
+  width: 100% !important;
+}
+
+// ELEMENTOS
+.navbar{
+  margin-bottom: 0;
+}
+.lista-productos{
+  &:hover{
+    background-color: $gris2;
+  }
+  a:hover{
+    text-decoration: none;
+  }
 }

@@ -1,0 +1,72 @@
+.col-lg-3.col-md-3.col-sm-3.col-xs-12.inline-block.vertical-top.no-padding
+	%h2.no-margin.small-padding.fondo-azul.texto-claro
+		Admin
+		%ul
+			%li=link_to "Inicio", root_path
+			%li=link_to "Productos", products_path
+.col-lg-9.col-md-9.col-sm-9.col-xs-12.inline-block
+	%article.card.large-padding
+		
+		.col-md-9.inline-block
+			%h3= @product.name
+		.col-md-3.inline-block
+			%h2.texto-rojo
+				$4,699.00
+
+		%nav.fondo-cafe.small-padding.text-center.top-space
+			.col-md-4
+				=link_to "Ver como cliente", product_path(id: @product.id, client: true), class: "texto-claro bold small-padding"
+			.col-md-4
+				=link_to "Editar", edit_product_path, class: "texto-claro bold small-padding"
+			.col-md.4
+				=link_to "Eliminar", "#eliminar-producto" ,class: "texto-claro bold small-padding", :"data-toggle"=>"modal"
+
+		%div.top-space
+			.col-md-4.inline-block.small-padding
+				%h3.texto-gris.text-center
+					Archivos
+			.col-md-8.inline-block.small-padding
+				=render "attachments/form", product_id: @product.id
+			%ol			
+				-@product.attachments.each do |archivo|
+					%li.small-padding.texto-cafe.texto-normal
+						.col-xs-11.inline-block
+							=link_to archivo.archivo_file_name, archivo, method: :get
+						.col-xs-1.inline-block
+							=link_to "X", "#eliminar-archivo#{archivo.id}" ,class: "texto-rojo bold small-padding", :"data-toggle"=>"modal"
+					/ Modal para cada archivo adjunto
+					.modal.fade{:style => "display: none;", :tabindex => "-1", id:"eliminar-archivo#{archivo.id}"}
+						.modal-dialog
+							.modal-content
+								.modal-header
+									%button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+									%h4.modal-title= archivo.archivo_file_name
+								.modal-body
+									%p Seguro que deseas eliminar este archivo ?
+								.modal-footer
+									=link_to "Eliminar", archivo, method: :delete, class: "btn btn-primary"
+									%button.btn.btn-primary{"data-dismiss" => "modal", :type => "button"}
+										Cancelar
+
+
+
+
+
+
+
+
+
+
+/ Modal para aceptar eliminacion de PRODUCTO
+#eliminar-producto.modal.fade{:style => "display: none;", :tabindex => "-1"}
+	.modal-dialog
+		.modal-content
+			.modal-header
+				%button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+				%h4.modal-title ¿ O.o ?
+			.modal-body
+				%p Seguro que deseas hacer esto ?
+			.modal-footer
+				=link_to "Eliminar", product_path, method: :delete, class: "btn btn-primary"
+				%button.btn.btn-primary{"data-dismiss" => "modal", :type => "button"}
+					Cancelar
