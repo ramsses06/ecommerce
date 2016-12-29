@@ -6,12 +6,15 @@
 			%li=link_to "Productos", products_path
 .col-lg-9.col-md-9.col-sm-9.col-xs-12.inline-block
 	%article.card.large-padding
-		
+
 		.col-md-9.inline-block
-			%h3= @product.name
+			%h3
+				= @product.name
 		.col-md-3.inline-block
+			%h2 Total en ventas:
 			%h2.texto-rojo
-				$4,699.00
+				$
+				= number_with_delimiter(@product.product_sales, delimiter: ',')
 
 		%nav.fondo-cafe.small-padding.text-center.top-space
 			.col-md-4
@@ -27,7 +30,7 @@
 					Archivos
 			.col-md-8.inline-block.small-padding
 				=render "attachments/form", product_id: @product.id
-			%ol			
+			%ol
 				-@product.attachments.each do |archivo|
 					%li.small-padding.texto-cafe.texto-normal
 						.col-xs-11.inline-block

@@ -4,6 +4,7 @@ $rojo : #E24B2C ;
 $cafe : #8C6429 ;
 $gris : #73726D ;
 $gris2 : #DEDBCC ;
+$verde : #52D102 ;
 
 
 body{
@@ -12,14 +13,18 @@ body{
 .notice, .alerta{
   margin: 0;
   padding: 0;
-  background-color: $rojo;
-  color: $claro;
   font-weight: bold;
   text-align: center;
 }
 
 .alert-box{
+  color: $claro;
   margin: 0;
+  background-color: $azul;
+
+  span:hover {
+    cursor: pointer;
+  }
 }
 
 
@@ -57,6 +62,13 @@ body{
 }
 .fondo-gris{
   background-color: $gris;
+}
+
+.texto-verde{
+  color: $verde;
+}
+.fondo-verde{
+  background-color: $verde;
 }
 
 
@@ -110,6 +122,15 @@ body{
 }
 .top-space{
   margin-top: 1em !important;
+}
+.bottom-space{
+  margin-bottom: 1em !important;
+}
+.left-space{
+  margin-left: 1em !important;
+}
+.right-space{
+  margin-right: 1em !important;
 }
 
 // BLOQUES

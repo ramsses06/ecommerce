@@ -1,0 +1,19 @@
+%table.table.table-striped.table-hover
+  %thead
+    %tr
+      %th #
+      %th Producto
+      %th Valor
+      %th Estado
+      %th Fecha
+  %tbody
+    - @orders.each do |order|
+      - order.products.each do |product|
+        %tr
+          %td= order.id
+          %td= product.name
+          %td= product.pricing
+          %td
+            = "pagado" if order.payed?
+            = "No completado" if order.created?
+          %td= order.created_at.to_formatted_s(:long)

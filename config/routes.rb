@@ -2,15 +2,31 @@ Rails.application.routes.draw do
 
   resources :products
   resources :attachments, only: [:new, :create, :destroy, :show]
-  
+  resources :in_shopping_carts, only: [:create, :destroy]
+
   get 'emails/create'
 
   devise_for :users
 
   post "/emails/create", as: :create_email
+  post "/pagar", to: "payments#create"
+  get "/checkout", to: "payments#checkout"
 
-  #Carrito de compras
-  get "/carrito", to: 'in_shopping_cart#show'
+  #tarjeta credito
+  post "/payments/cards", to: "payments#process_card"
+
+  #Carrito de compras -> carrito_path
+  get "/carrito", to: 'shopping_carts#show'
+  # para mandar a create de in_shopping_cart -> agregar_al_carrito_path
+  get "/agregar/:product_id", to: "in_shopping_carts#create", as: :agregar_al_carrito
+  # succed venta
+  get "/ok", to: "welcome#payment_succed"
+
+
+  # rutas para descarga de archivos
+  get "/descargar/:id", to:"links#download"
+  get "/descargar/:id/archivo/:attachment_id", to:"links#download_attachment", as: :download_attachment
+  get "/invalid", to: "welcome#unregistered"
 
   authenticated :user do
     root 'welcome#index'

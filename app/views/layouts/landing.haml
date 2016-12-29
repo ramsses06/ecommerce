@@ -7,7 +7,9 @@
 		= csrf_meta_tags
 
 	%body
-		%div{:style=> " #{"display:none;" if alert.nil? && notice.nil?} "}
+		%div.alert-box.small-padding{:style=> "#{'display:none;' if alert.nil? && notice.nil?}"}
+			%span.pull-right#cerrar-ventana
+				X
 			%p.notice
 				=notice
 			%p.alerta

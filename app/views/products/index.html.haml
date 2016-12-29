@@ -3,7 +3,7 @@
 		- @products.each do |product|
 			.col-md-3.col-sm-6.col-xs-12.inline-block
 				.card.super-small-padding.lista-productos
-					= link_to product do
+					= link_to product_path(product, nombre: product.name) do
 						%div
 							= image_tag product.productimg.url(:medium), class: "full-img"
 						%div

@@ -39,6 +39,10 @@ gem 'bootstrap-sass'
 gem 'bootstrap-material-design'
 # gema para sdk de paypal
 gem 'paypal-sdk-rest'
+#gema de maquinas de estado
+gem 'aasm'
+#Gema para validar tarjetas de credito
+gem "credit_card_validator"
 
 
 # ENTORNO DE PRUEBAS
@@ -61,6 +65,8 @@ gem 'factory_girl_rails', "~> 4.0"
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  #gema para abrir los correos en el navegador en lugar de enviarlos en el entorno de desarrollo
+  gem 'letter_opener'
 end
 
 group :development do

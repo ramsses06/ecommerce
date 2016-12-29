@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Ecommerce</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -10,7 +10,8 @@
 
 <%= render "partials/nav" %>
 
-<div style="<%= 'display:none;' if notice.nil? && alert.nil? %>" class="alert-box" >
+<div style="<%= 'display:none;' if notice.nil? && alert.nil? %>" class="alert-box small-padding" >
+  <span id="cerrar-ventana" class="pull-right" >X</span>
 	<p class="notice"><%= notice %></p>
 	<p class="alerta"><%= alert %></p>
 </div>

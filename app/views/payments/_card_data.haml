@@ -1,0 +1,27 @@
+/ Modal para aceptar eliminacion de PRODUCTO
+#tarjetac.modal.fade{:style => "display: none;", :tabindex => "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} X
+        %h4.modal-title.bottom-space Datos de Tarjeta
+      =form_tag "/payments/cards", method: :post do
+        .modal-body
+          =email_field_tag :email, nil, class: "form-control floating-label bottom-space", placeholder: "Correo Electrónico", required: "required"
+          =text_field_tag :number, nil, class: "form-control floating-label bottom-space", placeholder: "Numero de tarjeta", required: "required"
+          .form-group
+            .col-xs-6.col-sm-4.col-md-3.no-padding.inline-block
+              =select_tag :expire_month, options_for_select((1..12).to_a), class: "form-control"
+            .col-xs-6.col-sm-4.col-md-3.no-padding.inline-block
+              =select_tag :expire_year, options_for_select((2017..2025).to_a), class: "form-control"
+          =number_field_tag :cvv2, nil, class: "form-control floating-label bottom-space", placeholder: "CVV", required: "required"
+          .form-group
+            .col-xs-6.col-sm-4.col-md-3.no-padding.inline-block
+              =text_field_tag :first_name, nil, class: "form-control floating-label bottom-space", placeholder: "Nombre", required: "required"
+            .col-xs-6.col-sm-4.col-md-3.no-padding.inline-block
+              =text_field_tag :last_name, nil, class: "form-control floating-label bottom-space", placeholder: "Apellido", required: "required"
+        .modal-footer
+          =content_tag :button, method: :submit, class: "btn btn-primary" do
+            Pagar
+          %button.btn.btn-primary{"data-dismiss" => "modal", :type => "button"}
+            Cancelar

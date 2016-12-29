@@ -1,9 +1,8 @@
-%div.clase#id{:name=>"name"}
-	%h1
-		Bienvenido #{ current_user.email }
-
-	%div{:class=>"clase"}
-		%p= link_to "Ir a Productos", products_path
-		%p
-			=link_to "Cerrar Sesión", destroy_user_session_path, method: :delete
-
+.col-xs-12.col-md-10.center-block.no-float
+  .card.small-padding
+    .top-space
+      .col-md-4.col-xs-12.inline-block
+        - #hace referencia al Modelo de Product y renderiza un Parcial en la carpeta "products/_product.haml"
+        =render current_user.products
+      .col-md-8.col-xs-12.inline-block.vertical-top
+        =render "payments/index"
