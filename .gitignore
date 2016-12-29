@@ -56,6 +56,8 @@ config/database.yml
 config/application.yml
 config/mandrill.yml
 config/paperclip.yml
+config/paypal.yml
+config/initializers/setup_email.rb
 
 # System Recordings from Tropo
 public/tropo_recordings/**/*
