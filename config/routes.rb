@@ -6,7 +6,12 @@ Rails.application.routes.draw do
 
   get 'emails/create'
 
-  devise_for :users
+  devise_for :users, controllers:{
+    omniauth_callbacks: "users/omniauth_callbacks"
+  }
+  post "/sign_up_data", to: "users/omniauth_callbacks#sign_up_data"
+  # get "/sign_up_data", to: "users/omniauth_callbacks#index"
+
 
   post "/emails/create", as: :create_email
   post "/pagar", to: "payments#create"

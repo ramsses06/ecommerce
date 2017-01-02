@@ -22,13 +22,22 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
 
-         # Metodo para mostrar los MyPayment de los productos de los usuarios dueños
-         def orders
-          MyPayment.joins(:products)
-          .joins("LEFT JOIN users ON products.user_id = users.id")
-          .where(users:{id: self.id})
-         end
+  # Metodo para mostrar los MyPayment de los productos de los usuarios dueños
+  def orders
+    MyPayment.joins(:products)
+              .joins("LEFT JOIN users ON products.user_id = users.id")
+              .where(users:{id: self.id})
+  end
+
+  def self.from_omniauth(auth)
+    where(provider: auth["provider"], uid: auth["uid"]).first_or_create do |user|
+      if auth["info"]["email"]
+        user.email = auth["info"]["email"]
+      end
+      user.password = Devise.friendly_token[0,20] #crea clave de 20 caracteres
+    end
+  end
 
 end

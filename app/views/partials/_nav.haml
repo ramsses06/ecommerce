@@ -13,23 +13,24 @@
           %li
             = link_to destroy_user_session_path, method: :delete do
               Cerrar sesión
-        %li.dropdown
-          %a.dropdown-toggle{"data-target" => "#", "data-toggle" => "dropdown", :href => "index.html"}
-            Ejemplo de Dropdown
-            %b.caret
-          %ul.dropdown-menu
-            %li
-              %a{:href => "javascript:void(0)"} Action
-            %li
-              %a{:href => "javascript:void(0)"} Another action
-            %li
-              %a{:href => "javascript:void(0)"} Something else here
-            %li.divider
-            %li.dropdown-header Dropdown header
-            %li
-              %a{:href => "javascript:void(0)"} Separated link
-            %li
-              %a{:href => "javascript:void(0)"} One more separated link
+        - if user_signed_in?
+          %li.dropdown
+            %a.dropdown-toggle{"data-target" => "#", "data-toggle" => "dropdown", :href => "index.html"}
+              =current_user.email
+              %b.caret
+            %ul.dropdown-menu
+              %li
+                %a{:href => "javascript:void(0)"} Action
+              %li
+                %a{:href => "javascript:void(0)"} Another action
+              %li
+                %a{:href => "javascript:void(0)"} Something else here
+              %li.divider
+              %li.dropdown-header Dropdown header
+              %li
+                %a{:href => "javascript:void(0)"} Separated link
+              %li
+                %a{:href => "javascript:void(0)"} One more separated link
       %ul.nav.navbar-nav
         %li
           =link_to "Productos", products_path

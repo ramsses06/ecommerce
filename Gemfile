@@ -44,11 +44,17 @@ gem 'aasm'
 #Gema para validar tarjetas de credito
 gem "credit_card_validator"
 
+#FACEBOOK
+gem "omniauth-facebook"
 
 # ENTORNO DE PRUEBAS
 gem 'shoulda-matchers'
 gem 'rspec-rails'
 gem 'factory_girl_rails', "~> 4.0"
+
+group :production do
+  gem 'mysql2','~>0.3.9'
+end
 #----------------------------------------------------------------#
 
 
