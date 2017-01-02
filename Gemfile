@@ -53,7 +53,7 @@ gem 'rspec-rails'
 gem 'factory_girl_rails', "~> 4.0"
 
 group :production do
-  gem 'mysql2','~>0.3.9'
+  gem 'mysql2','~>0.3.21'
 end
 #----------------------------------------------------------------#
 
