@@ -23,6 +23,7 @@ class Users::OmniauthCallbacksController < ApplicationController
     @user = User.from_omniauth(session["devise.auth"])
     if @user.update(user_params)
       sign_in_and_redirect @user, event: :authentication
+      @user.remember_me = true
     else
       # raise params.to_yaml
       render :edit

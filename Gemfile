@@ -52,6 +52,7 @@ gem 'shoulda-matchers'
 gem 'rspec-rails'
 gem 'factory_girl_rails', "~> 4.0"
 
+#mysql en produccion
 group :production do
   gem 'mysql2','~>0.3.21'
 end
