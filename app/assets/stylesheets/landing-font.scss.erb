@@ -1,22 +1,23 @@
 @font-face{
 	font-family:"Kostic";
-	src: url(<%= asset_path("Kostic-Regular.ttf") %>) format('truetype');
+	src: url(asset_path("Kostic-Regular.ttf")) format('opentype');
 }
 
 @font-face{
 	font-family:"Kostic";
-	src: url(<%= asset_path("Kostic-Bold.ttf") %>) format('truetype');
+	src: url(asset_path("Kostic-Bold.ttf")) format('truetype');
 	font-weight: bold;
 }
 
 @font-face{
 	font-family:"Kostic";
-	src: url(<%= asset_path("Kostic-Thin.ttf") %>) format('truetype');
-	font-weight: lighter;
+	src: url(asset_path("Kostic-Thin.ttf")) format('truetype');
+	font-weight: 100;
 }
 
 .kostic-regular{
 	font-family: "Kostic";
+	font-weight: normal;
 }
 .kostic-bold{
 	font-family: "Kostic";
