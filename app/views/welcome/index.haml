@@ -1,5 +1,6 @@
 .col-xs-12.col-md-10.center-block.no-float
   .card.small-padding
+    %div.small-padding.col-md-4.col-xs-12.inline-block= link_to "Crear Producto", new_product_path, class: "btn btn-success btn-lg btn-block"
     .top-space
       .col-md-4.col-xs-12.inline-block
         - #hace referencia al Modelo de Product y renderiza un Parcial en la carpeta "products/_product.haml"

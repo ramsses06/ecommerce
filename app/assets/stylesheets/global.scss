@@ -74,7 +74,7 @@ body{
 
 // TEXTOS
 .texto-normal{
-  font-size: 1em;
+  font-size: 1.1em;
 }
 .texto-medium{
   font-size: 1.5em;
@@ -169,5 +169,11 @@ img{
   }
   a:hover{
     text-decoration: none;
+  }
+}
+
+h4{
+  a:hover{
+    color: $claro;
   }
 }

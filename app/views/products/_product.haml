@@ -1,7 +1,9 @@
 -# Se puede utilizar PORDUCT del MODELO debido al render desde "/welcome/index"
 %article
-  %h4.small-padding.fondo-verde.no-margin
-    =link_to product.name, product, class: "texto-claro"
+  .panel.panel-primary
+    .panel-heading.texto-claro
+      %h4.no-margin
+        =link_to product.name, product, class: "texto-claro"
   .text-left
     .small-padding.col-md-8.inline-block.no-padding
       = product.description

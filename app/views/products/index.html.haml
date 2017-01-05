@@ -1,18 +1,14 @@
 %div
 	%article.medium-padding
 		- @products.each do |product|
-			.col-md-3.col-sm-6.col-xs-12.inline-block
+			.col-md-3.col-sm-6.col-xs-12.inline-block.top-space.vertical-top
 				.card.super-small-padding.lista-productos
 					= link_to product_path(product, nombre: product.name) do
 						%div
 							= image_tag product.productimg.url(:medium), class: "full-img"
 						%div
-							%h4.text-center.texto-cafe.texto-big.bold
+							%h4.text-center.texto-cafe.texto-medium.bold
 								= product.name
 						%div
-							%h4.texto-azul.texto-medium.small-padding
-								= product.description
-
-
-
-= link_to 'New Product', new_product_path
+							%p.texto-normal.small-padding
+								= truncate(product.description,length: 100)

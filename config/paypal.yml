@@ -25,5 +25,7 @@ development:
   <<: *default
 
 production:
-  <<: *default
+  # <<: *default #commentar esta linea para produccion
+  client_id: ATDBof8N8fpXD8rQ0gdD52KSfkBJsuNL6ZxmwmhiDggDDIb6cmqhBP-aWbRSO__DYlmCaZYPWMYfBzdK
+  client_secret: EC2KClSLa1XEUJ9TNM7eKDNmHzk6XzURiyf2d4uaPeOrzG9DPhV4-G-Z2jL9-XmEm3mImmzPRBrAXJVH
   mode: live

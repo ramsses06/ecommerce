@@ -11,7 +11,7 @@
           %tr{id: "#{product.id}"}
             %td= product.name
             %td.text-center= number_with_delimiter(product.pricing, delimiter: ',')
-            %td.text-center Eliminar
+            %td.text-center= link_to "Eliminar", in_sh_ca, method: :delete
 
     .top-space.large-padding.text-center#payment_form
       %p.texto-medium

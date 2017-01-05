@@ -6,5 +6,5 @@
       Inicio de Sesión
     .top-space
       =form_tag "/sign_up_data", method: :post do
-        =email_field_tag "user[email]", @user.email, placeholder:"Correo electrónico"
-        =submit_tag "Iniciar Sesión"
+        =email_field_tag "user[email]", @user.email, placeholder:"Correo electrónico", class: "form-control floating-label"
+        =submit_tag "Iniciar Sesión", class: "btn btn-success"
