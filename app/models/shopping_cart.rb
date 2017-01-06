@@ -53,8 +53,8 @@ class ShoppingCart < ActiveRecord::Base
   end
 
   #Conseguir los items o productos en esta tabla Shopping_cart para mandarlos a las Clase de Paypal en Stores, -> paypal_form es un metodo en productos
-  def items
-    self.products.map{|product| product.paypal_form}
+  def items(divisa)
+    self.products.map{|product| product.paypal_form(divisa)}
   end
 
 end

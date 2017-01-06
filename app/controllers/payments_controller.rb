@@ -21,7 +21,7 @@ class PaymentsController < ApplicationController
     if @shopping_cart.products.empty?
       redirect_to carrito_path, notice: "Tu carrito esta vacio"
     else
-      paypal_helper = Stores::Paypal.new(@shopping_cart.items, @shopping_cart.total, checkout_url, carrito_url, divisa: "USD")
+      paypal_helper = Stores::Paypal.new(@shopping_cart.items("MXN"), @shopping_cart.total, checkout_url, carrito_url, divisa: "MXN")
 
       if paypal_helper.process_payment.create
         @my_payment = MyPayment.create!(paypal_id: paypal_helper.payment_VAR.id,
@@ -38,7 +38,7 @@ class PaymentsController < ApplicationController
     if @shopping_cart.products.empty?
       redirect_to carrito_path, notice: "Tu carrito esta vacio"
     else
-      paypal_helper = Stores::Paypal.new(@shopping_cart.items, @shopping_cart.total, checkout_url, carrito_url, divisa: "USD")
+      paypal_helper = Stores::Paypal.new(@shopping_cart.items("MXN"), @shopping_cart.total, checkout_url, carrito_url, divisa: "MXN")
 
       if paypal_helper.process_card(params).create #mando los parametros de la tarjeta
         @my_payment = MyPayment.create!(paypal_id: paypal_helper.payment_VAR.id, ip: request.remote_ip, email: params[:email], shopping_cart_id: cookies[:shopping_cart_id])

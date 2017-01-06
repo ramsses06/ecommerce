@@ -32,8 +32,8 @@ class Product < ActiveRecord::Base
 	validates_attachment_content_type :productimg, content_type: /\Aimage\/.*\Z/
 
   # Este metodo es mandado a llamar desde shopping_cart para guardar en un arreglo los productos con el FORMATO necesario.
-  def paypal_form
-    {name: name, sku: :item, price: pricing, currency: "USD", quantity: 1}
+  def paypal_form(divisa)
+    {name: name, sku: :item, price: pricing, currency: divisa, quantity: 1}
   end
 
   def my_payments_sales
