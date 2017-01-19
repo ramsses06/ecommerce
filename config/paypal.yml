@@ -1,8 +1,8 @@
 test: &default
 
   # Credentials for REST APIs
-  client_id: AayYWFakMDtadw5byIaEqc4xuo9Hk83Xbr3MJvPDMAzElvTMBTQoLR7BtcZhcxGh13XISTjxzcR7zrv1
-  client_secret: ENpFril_MtDdmlrXUe3iGKrut9fCQygRUu0g2_hkXO5wGD3fa3gIe3EWhNv0TX4Dz-RUeinfZS5cShVE
+  client_id: AayYWFakMDterweradw5byIaEqc4xuo
+  client_secret: ENpFril_MtDdmwerlrXUe3iGKwerwer
 
   # Mode can be 'live' or 'sandbox'
   mode: sandbox
@@ -26,6 +26,6 @@ development:
 
 production:
   # <<: *default #commentar esta linea para produccion
-  client_id: ATDBof8N8fpXD8rQ0gdD52KSfkBJsuNL6ZxmwmhiDggDDIb6cmqhBP-aWbRSO__DYlmCaZYPWMYfBzdK
-  client_secret: EC2KClSLa1XEUJ9TNM7eKDNmHzk6XzURiyf2d4uaPeOrzG9DPhV4-G-Z2jL9-XmEm3mImmzPRBrAXJVH
+  client_id: variable de entorno
+  client_secret: variable de entorno
   mode: live
